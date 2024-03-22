@@ -74,8 +74,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const generateButton = document.getElementById('generateButton');
     const randomPedidoElement = document.getElementById('randomPedido');
+    let isButtonDisabled = false;
 
     generateButton.addEventListener('click', function() {
+        if (isButtonDisabled) return; // Evita cliques repetidos enquanto o temporizador está ativo
+        randomPedidoElement.innerHTML = "sonserina não... sonserina não";
+        isButtonDisabled = true;
+
+        generateButton.disabled = true; // Desabilita o botão para evitar cliques repetidos
+        
         const lanches = Object.keys(cardapio.lanches);
         const randomLancheKey = lanches[Math.floor(Math.random() * lanches.length)];
         const randomLanche = cardapio.lanches[randomLancheKey];
@@ -89,14 +96,17 @@ document.addEventListener('DOMContentLoaded', function() {
         const randomBebidaPrice = cardapio.bebidas[randomBebidaKey];
 
         const totalPrice = randomLanche.preco + randomAdicionalPrice + randomBebidaPrice;
-
-        randomPedidoElement.innerHTML = `
-            <h2 class="${randomLancheKey}">${randomLancheKey}</h2>
-            <p>Preço do Lanche: R$ ${randomLanche.preco.toFixed(2)}</p>
-            <p>Ingredientes: ${randomLanche.ingredientes.join(', ')}</p>
-            <p>Adicional: ${randomAdicionalKey} (+ R$ ${randomAdicionalPrice.toFixed(2)})</p>
-            <p>Bebida: ${randomBebidaKey} (+ R$ ${randomBebidaPrice.toFixed(2)})</p>
-            <p>Total: R$ ${totalPrice.toFixed(2)}</p>
-        `;
+        setTimeout(function() {
+            isButtonDisabled = false;
+            generateButton.disabled = false; // Habilita o botão após 5 segundos
+            randomPedidoElement.innerHTML = `
+                <h2 class="${randomLancheKey}">${randomLancheKey}</h2>
+                <p>Preço do Lanche: R$ ${randomLanche.preco.toFixed(2)}</p>
+                <p>Ingredientes: ${randomLanche.ingredientes.join(', ')}</p>
+                <p>Adicional: ${randomAdicionalKey} (+ R$ ${randomAdicionalPrice.toFixed(2)})</p>
+                <p>Bebida: ${randomBebidaKey} (+ R$ ${randomBebidaPrice.toFixed(2)})</p>
+                <p>Total: R$ ${totalPrice.toFixed(2)}</p>
+            `;
+        }, 5000); // Atraso de 5 segundos (5000 milissegundos)
     });
 });
