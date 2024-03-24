@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
         randomTituloPedidoElement.innerHTML = `
             <p>sonserina não... sonserina não<p/>
             <img id="chapéu-seletor" src="imagens/chapeu.png" alt="Chapéu Seletor" style="width: 100px; height: 100px;">`;
-
+            randomPedidoElement.innerHTML = ``
 
         const lanches = Object.keys(cardapio.lanches);
         const randomLancheKey = lanches[Math.floor(Math.random() * lanches.length)];
