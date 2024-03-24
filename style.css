@@ -1,60 +1,53 @@
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
+    display: flex; /* Center content vertically */
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
-}
-
-.container {
-    text-align: center;
-    max-width: 90%;
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: #fff;
+    min-height: 100vh; /* Ensure content fills viewport height */
+    background-color: #f5f5f5; /* Light background */
+  }
+  
+  .lanche-selector {
+    background-color: #fff; /* White container background */
+    border-radius: 5px; /* Rounded corners */
+    padding: 20px; /* Inner padding */
+    text-align: center; /* Center text within container */
+    max-width: 500px; /* Set a maximum width for responsiveness */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  /* Specific Element Styles */
+  .title {
+    font-size: 2em; /* Larger headline */
+    margin-bottom: 15px; /* Add spacing below */
+  }
+  
+  .generate-button {
+    background-color: #4CAF50; /* Green button color */
+    color: #fff; /* White button text */
     border: none;
+    padding: 10px 20px;
     border-radius: 5px;
-    cursor: pointer;
-}
+    cursor: pointer; /* Indicate interaction possibility */
+    transition: background-color 0.2s ease; /* Smooth button hover effect */
+  }
+  
+  .generate-button:hover {
+    background-color: #3e8e41; /* Darker green on hover */
+  }
+  
+  .random-pedido {
+    font-style: italic; /* Italicize suggested snack */
+    margin-top: 20px; /* Spacing above suggested snack */
+  }
+  
+  .generate-button.disabled {
+    background-color: #c4c4c4; /* Gray color for disabled state */
+  }
 
-button:hover {
-    background-color: #0056b3;
-}
-
-p {
-    font-size: 18px;
-    margin-top: 10px;
-}
-
-.grifinoria {
-    background-color: #b71d1d;
-    color: #fff;
-}
-
-.sonserina {
-    background-color: #000000;
-    color: #fff;
-}
-
-.lufa-lufa {
-    background-color: #008000;
-    color: #fff;
-}
-
-.corvinal {
-    background-color: #000080;
-    color: #fff;
-}
-
-@media (min-width: 768px) {
-    .container {
-        max-width: 600px;
-    }
-}
+  .random-pedido {
+    text-align: left;
+  }
