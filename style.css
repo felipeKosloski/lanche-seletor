@@ -1,53 +1,54 @@
-/* General Styles */
 body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex; /* Center content vertically */
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; /* Ensure content fills viewport height */
-    background-color: #f5f5f5; /* Light background */
-  }
-  
-  .lanche-selector {
-    background-color: #fff; /* White container background */
-    border-radius: 5px; /* Rounded corners */
-    padding: 20px; /* Inner padding */
-    text-align: center; /* Center text within container */
-    max-width: 500px; /* Set a maximum width for responsiveness */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  }
-  
-  /* Specific Element Styles */
-  .title {
-    font-size: 2em; /* Larger headline */
-    margin-bottom: 15px; /* Add spacing below */
-  }
-  
-  .generate-button {
-    background-color: #4CAF50; /* Green button color */
-    color: #fff; /* White button text */
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer; /* Indicate interaction possibility */
-    transition: background-color 0.2s ease; /* Smooth button hover effect */
-  }
-  
-  .generate-button:hover {
-    background-color: #3e8e41; /* Darker green on hover */
-  }
-  
-  .random-pedido {
-    font-style: italic; /* Italicize suggested snack */
-    margin-top: 20px; /* Spacing above suggested snack */
-  }
-  
-  .generate-button.disabled {
-    background-color: #c4c4c4; /* Gray color for disabled state */
-  }
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #efeee9; /* Cor de fundo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
-  .random-pedido {
-    text-align: left;
-  }
+.container {
+  max-width: 300px;
+  padding: 20px;
+  background-color: #fff; /* Cor de fundo do container */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.title {
+  color: #641e1e; /* Cor do título */
+}
+
+.content {
+  text-align: center;
+}
+
+.random-titulo-pedido {
+  margin-bottom: 20px;
+}
+
+.random-pedido {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.generate-button {
+  padding: 10px 20px;
+  background: linear-gradient(45deg, #641e1e, #c39a1c, #3d2f22); /* Gradiente de cores */
+  color: #fff; /* Cor do texto do botão */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.generate-button:hover {
+  background: linear-gradient(45deg, #3d2f22, #c39a1c, #641e1e); /* Gradiente de cores ao passar o mouse */
+}
